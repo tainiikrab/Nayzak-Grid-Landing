@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "reset";
+
+$black: #121212;
+
+@mixin text($weight, $size, $height){
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;  
+}
+
+
+%orange-button {
+    margin-right: 0;
+    cursor: pointer;
+    padding: 11px 22px;
+    background: #121221;
+    border-radius: 50px;
+    border: 0;
+    font-family: 'Mulish', sans-serif;
+    color: white;
+    background-color: #255255
+
+}
+
+.header{
+    user-select: none;
+    width: 100%;
+    max-height: 55px;
+    background-color: $black;
+    &__grid{
+        max-width: 1442px;
+        display: grid;
+        grid-template-rows: 55px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    &__logo{
+        margin-left: 20px;
+        align-self: center;
+    }
+    &__icons{
+        cursor: pointer;
+        align-self: center;
+        max-width: 194px;
+        margin-right: 20px;
+        
+    }
+    &__elements{
+        margin: auto;
+    }
+    &__el{
+        color: white;
+        :visited{
+            color: white;
+        }
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        margin-right: 30px;
+    }
+    // &__arrow{
+    //     cursor: pointer;
+    // }
+
+
+}
+.top{
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    &__img{
+        margin: 0;
+        width: 50vw;
+        height: auto;
+    }
+
+}
+.l{
+    margin: 0;
+}
+.block{
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    margin-left: 20px;
+    margin-top: 120px;
+    &__button{
+        max-width: 180px;
+        background-color: $black;
+        color: white;
+        @include text(500, 18px, 32px);
+        padding: 10px 0px;
+        letter-spacing: -0.4px;
+    }
+    &__tagline{@include text(600, 16px, 26px)}
+    &__h{@include text(500, 54px, 58px); margin-bottom: 8px; letter-spacing: -1px;}
+    &__text{@include text(400, 18px, 30px); margin-bottom: 28px; font-family: 'Inter';}
+
+
+
+}
+
+.grid1{
+    margin-top: 52px;
+    max-width: 1400px;
+    display: grid;
+    gap: 32px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas: "a b" 
+                         "a c";
+    &__coats{
+        grid-area: a;
+    }
+    &__text{
+        cursor: pointer;
+        letter-spacing: -0.6px;
+        @include text(500, 34px, 38px);
+        position: relative;
+        bottom: 110px;
+        left: 30px;
+        span{
+            cursor: pointer;
+            @include text(500, 16px, 28px);
+            letter-spacing: -0.4px;
+            display: block;
+            text-decoration: underline;
+        }
+    }
+    &__img{
+        width: 100%;
+        height: 100%;
+    }
+}
+.coats_text{
+    bottom: 850px;
+}
+
+.sellers{
+    margin-top: 82px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    &__header{
+        @include text(500, 44px, 58px);
+        margin-bottom: 52px;
+    }
+}
+.grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 56px 32px;
+    &__div{
+        display: flex;
+        flex-direction: column;
+    }
+    &__txt{
+        margin-top: 12px;
+        @include text(500, 16px, 28px);
+        letter-spacing: -0.4px;
+        span{
+            display: block;
+            text-align: center;
+            @include text(600, 14px, 22px);
+            letter-spacing: 0;
+        }
+    }
+
+}
+.logos{
+    margin: 56px auto;
+    max-width: 1440px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.line{
+    margin-top: 52px;
+    height: 1px;
+    max-width: 1336px;
+    background-color: #CBCBCB;
+}
+
+.insta{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    &__tagline{
+        @include text(600, 16px, 26px);
+    }
+    &__header{
+        margin-bottom: 15px;
+        @include text(500, 40px, 44px);
+    }
+    &__text{
+        text-align: center;
+        max-width: 540px;
+        @include text(400, 16px, 26px);
+        color: #3E3E59;
+        margin-bottom: 32px;
+    }
+    &__grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 32px
+    }
+}
+
+.footer{
+    margin: 80px auto;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    &__bottom{
+        margin: 0;
+        display: grid;
+        grid-template-columns: fit-content(400px) 1fr 1fr;
+        grid-template-areas: "a b c";
+
+    }
+    &__div{
+        margin-left: 10px;
+        grid-area: a;
+        img{
+            margin-right: 23px;
+        }
+
+    }
+    p{
+        grid-area: c;
+        margin-right: 10px;
+    }
+    &__line{
+        margin-top: 72px;
+        margin-bottom: 27px;
+        height: 1px;
+        width: 90%;
+        background-color: #CBCBCB;
+    }
+}
+.grid3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: "a b c";
+    &__div{
+        grid-area: b;
+        display: flex;
+        flex-direction: column;
+    }
+    &__img{
+        margin: 0 auto;
+        justify-self: center;
+        margin-bottom: 32px;
+    }
+    a{
+        color: $black;
+        margin-right: 32px;
+        
+    }
+    a:last-child{
+        margin-right: 0px;
+    }
+}
