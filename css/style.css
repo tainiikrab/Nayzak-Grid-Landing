@@ -112,6 +112,10 @@ a:hover {
   margin: 0;
 }
 
+.m {
+  display: none;
+}
+
 .block {
   max-width: 450px;
   display: -webkit-box;
@@ -165,17 +169,42 @@ a:hover {
   grid-template-areas: "a b" "a c";
 }
 .grid1__coats {
+  background-image: url("../img/coats.png");
+  background-repeat: no-repeat;
+  background-size: contain;
   grid-area: a;
+  max-width: 652px;
+  max-height: 790px;
+  width: 39.12vw;
+  height: 47.4vw;
+}
+.grid1__purses {
+  background-image: url("../img/purses.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 652px;
+  max-height: 379px;
+  width: 39.12vw;
+  height: 22.74vw;
+}
+.grid1__accessories {
+  background-image: url("../img/accessories.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  max-width: 652px;
+  max-height: 379px;
+  width: 39.12vw;
+  height: 22.74vw;
 }
 .grid1__text {
   cursor: pointer;
+  text-align: left;
+  margin-left: 48px;
+  margin-top: 48px;
   letter-spacing: -0.6px;
   font-weight: 500;
   font-size: 34px;
   line-height: 38px;
-  position: relative;
-  bottom: 110px;
-  left: 30px;
 }
 .grid1__text span {
   cursor: pointer;
@@ -189,10 +218,6 @@ a:hover {
 .grid1__img {
   width: 100%;
   height: 100%;
-}
-
-.coats_text {
-  bottom: 850px;
 }
 
 .sellers {
@@ -334,7 +359,7 @@ a:hover {
 
 .grid3 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 6fr 1fr;
   grid-template-areas: "a b c";
 }
 .grid3__div {
@@ -358,4 +383,66 @@ a:hover {
 }
 .grid3 a:last-child {
   margin-right: 0px;
+}
+
+@media (max-width: 1025px) {
+  .header__grid {
+    grid-template-areas: "a b c";
+  }
+  .header__elements {
+    display: none;
+  }
+  .header__icons {
+    grid-area: c;
+  }
+  .top__img {
+    width: 55vw;
+    height: 43vw;
+  }
+  .block {
+    margin-top: 25px;
+    margin-right: 15px;
+  }
+  .block__h {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 5px;
+    letter-spacing: -1px;
+  }
+  .grid1__text {
+    margin-left: 3vw;
+    margin-top: 3vw;
+  }
+  .grid1__coats {
+    width: 46.944vw;
+    height: 56.88vw;
+  }
+  .grid1__purses {
+    width: 46.944vw;
+    height: 27.288vw;
+  }
+  .grid1__accessories {
+    width: 46.944vw;
+    height: 27.288vw;
+  }
+}
+@media (max-width: 767px) {
+  .top {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .top__img {
+    display: none;
+  }
+  .m {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 }

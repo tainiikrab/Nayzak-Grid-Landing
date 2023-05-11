@@ -79,6 +79,9 @@ $black: #121212;
 .l{
     margin: 0;
 }
+.m{
+    display: none;
+}
 .block{
     max-width: 450px;
     display: flex;
@@ -112,15 +115,40 @@ $black: #121212;
     grid-template-areas: "a b" 
                          "a c";
     &__coats{
+        background-image: url("../img/coats.png");
+        background-repeat: no-repeat;
+        background-size: contain;
         grid-area: a;
+        max-width: 652px;
+        max-height: 790px;
+        width: 39.12vw;
+        height: 47.4vw;
+    }
+    &__purses{
+        background-image: url("../img/purses.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        max-width: 652px;
+        max-height: 379px;
+        width: 39.12vw;
+        height: 22.74vw;
+    }
+    &__accessories{
+        background-image: url("../img/accessories.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        max-width: 652px;
+        max-height: 379px;
+        width: 39.12vw;
+        height: 22.74vw;
     }
     &__text{
         cursor: pointer;
+        text-align: left;
+        margin-left: 48px;
+        margin-top: 48px;
         letter-spacing: -0.6px;
         @include text(500, 34px, 38px);
-        position: relative;
-        bottom: 110px;
-        left: 30px;
         span{
             cursor: pointer;
             @include text(500, 16px, 28px);
@@ -134,9 +162,9 @@ $black: #121212;
         height: 100%;
     }
 }
-.coats_text{
-    bottom: 850px;
-}
+// .coats_text{
+//     bottom: 850px;
+// }
 
 .sellers{
     margin-top: 82px;
@@ -244,7 +272,7 @@ $black: #121212;
 }
 .grid3{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
     grid-template-areas: "a b c";
     &__div{
         grid-area: b;
@@ -263,5 +291,67 @@ $black: #121212;
     }
     a:last-child{
         margin-right: 0px;
+    }
+}
+
+@media(max-width: 1025px){
+    .header{
+        &__grid{
+            grid-template-areas: "a b c";
+        }
+        &__elements{
+            display: none;
+        }
+        &__icons{
+            grid-area: c;
+        }
+    }
+    .top{
+        &__img{
+            width: 55vw;
+            height: 43vw;
+        }
+    }
+    .block{
+        margin-top: 25px;
+        margin-right: 15px;
+        &__h{
+            @include text(500, 40px, 40px); 
+            margin-bottom: 5px; 
+            letter-spacing: -1px;
+        }
+    }
+    .grid1{
+        &__text{
+            margin-left: 3vw;
+            margin-top: 3vw;
+        }
+        &__coats{
+            width: 39.12vw *1.2;
+            height: 47.4vw *1.2;
+        }
+        &__purses{
+            width: 39.12vw *1.2;
+            height: 22.74vw *1.2;
+        }
+        &__accessories{
+            width: 39.12 *1.2vw;
+            height: 22.74 *1.2vw;
+        }
+    }
+}
+
+@media(max-width: 767px){
+    .top{
+        flex-direction: column-reverse;
+        align-items: center;
+        &__img{
+            display: none;
+        }
+    }
+    .m{
+        display: block;
+        width: 100%;
+        height: auto;
     }
 }
