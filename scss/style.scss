@@ -293,7 +293,17 @@ $black: #121212;
         margin-right: 0px;
     }
 }
-
+@media(max-width: 1400px){
+    .grid1{
+        max-width: 95vw;
+    }
+    .sellers{
+        max-width: 95vw;
+    }
+    .insta{
+        max-width: 95vw;
+    }
+}
 @media(max-width: 1025px){
     .header{
         &__grid{
@@ -342,16 +352,120 @@ $black: #121212;
 }
 
 @media(max-width: 767px){
+    .header{
+        &__grid{
+            grid-template-columns: 5fr 1fr 5fr;
+        }
+        &__logo{
+            max-width: 40vw;
+            margin-left: 10px;
+        }
+        &__icons{
+            margin-right: 10px;
+        }
+    }
     .top{
+        width: 100%;
+        overflow-x: hidden;
         flex-direction: column-reverse;
         align-items: center;
         &__img{
             display: none;
         }
     }
+    .block{
+        min-width: 90vw;
+        &__h{
+            @include text(500, 10vw, 10vw);
+            margin-bottom: 20px;
+        }
+        &__tagline{
+            @include text(500, 4vw, 5vw);
+            margin-bottom: 10px;
+        }
+        &__text{
+            @include text(400, 4vw, 5vw)
+        }
+        &__button{
+            @include text(400, 4vw, 5vw);
+            min-width: 40vw;
+            height: 14vw;
+        }
+    }
     .m{
         display: block;
         width: 100%;
         height: auto;
+    }
+    .grid1{
+        margin-top: 10vw;
+        max-width: 95vw;
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 1fr;
+        grid-template-rows: fit-content(500px) 1fr 1fr;
+        grid-template-areas: "a" 
+                             "b"
+                             "c";
+
+        &__coats{
+            width: 39.12vw *2.3;
+            height: 47.4vw *2.3;
+        }
+        &__purses{
+            width: 39.12vw *2.3;
+            height: 22.74vw *2.3;
+        }
+        &__accessories{
+            width: 39.12vw *2.3;
+            height: 22.74vw *2.3;
+        }
+        margin-bottom: 20px;
+    }
+    .sellers{
+        margin-top: 10vw;
+        max-width: 90vw;
+        &__header{
+            font-size: 10vw;
+            margin-bottom: 20px;
+        }
+    }
+    .grid2{
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .logos{
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    }
+    .insta{
+        max-width: 90vw;
+        &__grid{
+            grid-template-rows: 1fr 1fr;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+    .grid3{
+        &__text{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            text-align: center;
+            gap: 10px;
+            a{
+                margin: auto;
+            }
+        }
+    }
+    .footer{
+        &__div{
+            display: none;
+        }
+        &__bottom{
+            grid-template-columns: 1fr 1fr 5fr;
+        }
+    }
+    .line{
+        display: none;
     }
 }
